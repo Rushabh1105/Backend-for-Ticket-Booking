@@ -19,7 +19,7 @@ const updateSeat = async (num) => {
             id++;
         }
 
-        const response = await Booking.find();
+        const response = await getAllBookings();
         return response;
 
     } catch (error) {
@@ -28,7 +28,18 @@ const updateSeat = async (num) => {
     }
 }
 
+const getAllBookings = async () => {
+    try {
+        const response = await Booking.find();
+        return response;
+    } catch (error) {
+        console.log(error);
+        return error
+    }
+}
+
 
 module.exports = {
-    updateSeat
+    updateSeat,
+    getAllBookings,
 }

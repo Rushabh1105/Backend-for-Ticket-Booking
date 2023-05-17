@@ -20,6 +20,26 @@ const createBooking = async(req, res) => {
     }
 }
 
+const getAllBookings = async (req, res) => {
+    try {
+        const response = await bookingServiece.getAllBookings();
+        return res.json({
+            status : 200,
+            success : true,
+            message : "created booking",
+            data : response,
+        })
+    } catch (error) {
+        console.log(err);
+        return res.json({
+            status : 500,
+            success : false,
+            message : "cannot fetch",
+        })
+    }
+}
+
 module.exports = {
     createBooking,
+    getAllBookings,
 }
