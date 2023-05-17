@@ -19,7 +19,7 @@ const updateSeat = async (num) => {
             id++;
         }
 
-        const response = await getAllBookings();
+        const response = await Booking.find();
         return response;
 
     } catch (error) {
