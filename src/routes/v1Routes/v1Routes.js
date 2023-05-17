@@ -6,8 +6,7 @@ const router = express.Router();
 
 
 router.get('/booking', bookingController.getAllBookings);
-
-router.post('/booking', bookingController.createBooking )
+router.post('/booking', bookingController.createBooking );
 
 
 module.exports = router

@@ -14,7 +14,8 @@ app.use(bodyParser.urlencoded({extended : false}))
 app.use("/api", apiRouter);
 
 
-app.listen(PORT,async () => {
+app.listen( PORT, async () => {
+    console.log(PORT);
     await connect();
     console.log('Mongodb connected successfully...')
     console.log('server started successfully...');
